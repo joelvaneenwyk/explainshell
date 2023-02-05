@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from explainshell import config
 from explainshell.web import app
 

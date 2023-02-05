@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM docker.io/library/python:3.10
 
 RUN apt-get update \
   && apt-get install man-db -y \
