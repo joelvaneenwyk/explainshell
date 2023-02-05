@@ -36,12 +36,12 @@ def explain():
                                helptext=helptext,
                                getargs=command)
 
-    except errors.ProgramDoesNotExist, e:
+    except errors.ProgramDoesNotExist as e:
         return render_template('errors/missingmanpage.html', title='missing man page', e=e)
-    except bashlex.errors.ParsingError, e:
+    except bashlex.errors.ParsingError as e:
         logger.warn('%r parsing error: %s', command, e.message)
         return render_template('errors/parsingerror.html', title='parsing error!', e=e)
-    except NotImplementedError, e:
+    except NotImplementedError as e:
         logger.warn('not implemented error trying to explain %r', command)
         msg = ("the parser doesn't support %r constructs in the command you tried. you may "
                "<a href='https://github.com/idank/explainshell/issues'>report a "
