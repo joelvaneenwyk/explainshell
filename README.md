@@ -35,11 +35,11 @@ Right now explainshell.com contains the entire [archive of Ubuntu](http://manpag
 possible to directly add a missing man page to the live site (it might be in the future). Instead, submit a link [here](https://github.com/idank/explainshell/issues/1)
 and I'll add it.
 
-## Running explainshell locally
+## Running ``explainshell`` locally
 
 To setup a working environment that lets you run the web interface locally, you'll need to:
 
-```ShellSession
+```bash
 $ pip install -r requirements.txt
 
 # load classifier data, needs a mongodb
@@ -56,7 +56,7 @@ OK
 
 Use the manager to parse and save a gzipped man page in raw format:
 
-```ShellSession
+```shell
 $ PYTHONPATH=. python explainshell/manager.py --log info manpages/1/echo.1.gz
 INFO:explainshell.store:creating store, db = 'explainshell_tests', host = 'mongodb://localhost'
 INFO:explainshell.algo.classifier:train on 994 instances
@@ -74,7 +74,7 @@ successfully added echo
 
 ### Start up a local web server
 
-```ShellSession
+```shell
 $ make serve
 python runserver.py
  * Running on http://127.0.0.1:5000/
